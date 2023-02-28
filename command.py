@@ -51,3 +51,10 @@ input_filename=arguments[2]
 
 if len(sys.argv) == 1 or param not in parameters:
     print_exit("Incorrect parameters. Type -h or -help for menu")
+
+try:
+    func = getattr(action, param)(input_filename)
+except AttributeError:
+    print_exit('Parameter not found "%s" (%s)') % (param, input_filename)
+else:
+    print(func)
