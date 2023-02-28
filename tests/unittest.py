@@ -15,6 +15,16 @@ class Test_create_FastQ_sequence(unittest.TestCase):
         for each_sequence in inp_file:
             self.assertEqual(each_sequence, sequence.FastQ_sequence(sequence_id, sequence_letter, quality_values))
 
+class Test_FastQ_sequence(unittest.TestCase):
+    def setUp(self):
+        self.seq = sequence.FastQ_sequence(sequence_id, sequence_letter, quality_values)
+
+    # Description: __init__ is correctly receiving the seq_id, seq_letter, quality_values.
+    def test_init(self):
+        self.assertEqual(self.seq.id, sequence_id)
+        self.assertEqual(self.seq.seq, sequence_letter)
+        self.assertEqual(self.seq.qual, quality_values)
+
 
 class Test_FastQ_sequence(unittest.TestCase):
     def setUp(self):
