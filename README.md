@@ -41,5 +41,6 @@ For zipped input file (.gz), it reads the file directly without unzipping it.
 - sequence.py: Main FastQ sequence class to read, parse, process, and return sequence object.
 - unit_test.py: Unit test script to test all the functions
 - utility.py: Utility functions to read file.
+- /tests: Test files for testing.
 
 Unable to create and perform complete test cases, in the given time, but will eventually complete it.
