@@ -32,6 +32,22 @@ class Test_FastQ_sequence(unittest.TestCase):
 
     # Description: __init__ is correctly receiving the seq_id, seq_letter, quality_values.
     def test_init(self):
-        self.assertEqual(self.fastq.id, sequence_id)
-        self.assertEqual(self.fastq.seq, sequence_letter)
-        self.assertEqual(self.fastq.qual, quality_values)
+        self.assertEqual(self.seq.id, sequence_id)
+        self.assertEqual(self.seq.seq, sequence_letter)
+        self.assertEqual(self.seq.qual, quality_values)
+
+    # Description: Test if check_sequence is fetching next line from the file and Modifies sequence object correctly.
+    def test_check_sequence(self):
+        file_name = './test_cases/good_sequence_file'
+        
+        inp_file = open(file_name)
+
+        seq_obj = sequence.FastQ_sequence()
+        while seq_obj.check_sequence(inp_file):
+            self.assertEqual(seq_obj, sequence.FastQ_sequence(sequence_id, sequence_letter, quality_values))
+        inp_file.close()
+        
+    # Description: check_sequence should raise an error if seq and quality length are unequal.
+    def test_unequal_length(self):
+        with self.assertRaises(sequence.Error):
+            sequence.FastQ_sequence(sequence_id, sequence_letter, quality_values[:-5])
