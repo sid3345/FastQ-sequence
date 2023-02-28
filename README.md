@@ -15,9 +15,11 @@ python ./command.py [--count_sequences] [--count_nucleotide] input_filename
 Parameters:
 
  --count_sequences                        : Counts the sequences in input file
+     
      Default : 0
 
  --count_nucleotide                       : Counts the nucleotides in input file
+    
     Default : 0
 
 
@@ -26,8 +28,8 @@ The Python script will output Count of the sequences in the input file and the C
 For zipped input file (.gz), it reads the file directly without unzipping it.
 
 Example command:
-------------------------------------------------------------------------------
 python ./command.py --count_nucleotide ./test_cases/good_sequence_file1.gz
+------------------------------------------------------------------------------
 
 python ./command.py --count_sequences ./test_cases/good_sequence_file
 ------------------------------------------------------------------------------
