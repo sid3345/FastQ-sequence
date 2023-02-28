@@ -22,7 +22,6 @@ def create_FastQ_sequence(fname):
     finally:
         f.close()
 
-
 '''Class to save FastQ sequence ID, sequence letters and quality values.'''
 class FastQ_sequence():
 
@@ -30,3 +29,22 @@ class FastQ_sequence():
         self.sequence_id = sequence_id
         self.sequence_letter = sequence_letter
         self.quality = quality
+
+    # Description: Fetches next line from the file and Modifies sequence object
+    # Input: sequence details
+    # Output: True / False, Modifies sequence object
+    def check_sequence(self, f):
+
+        line = f.readline()
+
+        while line == '\n':
+            line = f.readline()
+
+        if not line:
+            return False
+                
+        if not line.startswith('@'):
+            sys.exit('Error fetching next sequence. Line does not starts with @:\n' + line + '\n Exiting')
+
+        self.sequence_id = line.rstrip()[1:]
+        line = f.readline()
