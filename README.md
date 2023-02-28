@@ -9,7 +9,9 @@ For command syntax and descriptions, run python command.py -h:
 python ./command.py -h
 
 Syntax :
-python ./command.py [--count_sequences] [--count_nucleotide] input_filename
+
+
+- python ./command.py [--count_sequences] [--count_nucleotide] input_filename
 ------------------------------------------------------------------------------
 Parameters:
 
