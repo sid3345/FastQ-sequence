@@ -1,5 +1,5 @@
 # FastQ-sequence
-Python scripts to read, parse and output FastQ format sequence file, according to user's input
+Python scripts to read, parse and process FastQ format sequence file, according to user's input
 
 User Stories (Tasks) tracked as Issues.
 
