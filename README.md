@@ -17,11 +17,11 @@ Parameters:
 
  --count_sequences                        : Counts the sequences in input file.
 
-        Default : 0
+     Default : 0
 
  --count_nucleotide                       : Counts the nucleotides in input file.
     
-        Default : 0
+    Default : 0
 
 
 Input file should be a FastQ format file in an unzipped file (txt, etc) or a zipped (.gz) file.
@@ -29,10 +29,11 @@ The Python script will output Count of the sequences in the input file and the C
 For zipped input file (.gz), it reads the file directly without unzipping it.
 
 Example command:
-python ./command.py --count_nucleotide ./test_cases/good_sequence_file1.gz
+
+- python ./command.py --count_nucleotide ./test_cases/good_sequence_file1.gz
 ------------------------------------------------------------------------------
 
-python ./command.py --count_sequences ./test_cases/good_sequence_file
+- python ./command.py --count_sequences ./test_cases/good_sequence_file
 ------------------------------------------------------------------------------
 
 Files:
