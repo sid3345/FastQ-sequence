@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 '''
-Description: Utility functions to read and write file.
+Description: Utility functions to read file.
 Author: Siddharth Sinha (sid3345@gmail.com)
 '''
 
