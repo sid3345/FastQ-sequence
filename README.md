@@ -7,8 +7,9 @@ Important information:
 
 For command syntax and descriptions, run python command.py -h:
 python ./command.py -h
-------------------------------------------------------------------------------
+
 Syntax :
+------------------------------------------------------------------------------
 python ./command.py [--count_sequences] [--count_nucleotide] input_filename
 ------------------------------------------------------------------------------
 Parameters:
@@ -27,9 +28,11 @@ The Python script will output Count of the sequences in the input file and the C
 For zipped input file (.gz), it reads the file directly without unzipping it.
 
 Example command:
+------------------------------------------------------------------------------
 python ./command.py --count_nucleotide ./test_cases/good_sequence_file1.gz
 
 python ./command.py --count_sequences ./test_cases/good_sequence_file
+------------------------------------------------------------------------------
 
 Files:
 - action.py: Reads the input sequence file and returns the sequence count.
