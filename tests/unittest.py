@@ -19,3 +19,9 @@ class Test_create_FastQ_sequence(unittest.TestCase):
 class Test_FastQ_sequence(unittest.TestCase):
     def setUp(self):
         self.fastq = sequence.FastQ_sequence(sequence_id, sequence_letter, quality_values)
+
+    # Description: __init__ is correctly receiving the seq_id, seq_letter, quality_values.
+    def test_init(self):
+        self.assertEqual(self.fastq.id, sequence_id)
+        self.assertEqual(self.fastq.seq, sequence_letter)
+        self.assertEqual(self.fastq.qual, quality_values)
