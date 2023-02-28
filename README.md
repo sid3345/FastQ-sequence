@@ -29,10 +29,10 @@ For zipped input file (.gz), it reads the file directly without unzipping it.
 
 ### Example command:
 
-- `python ./command.py --count_nucleotide ./test_cases/good_sequence_file1.gz`
+- `python ./command.py --count_nucleotide ./tests/good_sequence_file1.gz`
 ------------------------------------------------------------------------------
 
-- `python ./command.py --count_sequences ./test_cases/good_sequence_file`
+- `python ./command.py --count_sequences ./tests/good_sequence_file`
 ------------------------------------------------------------------------------
 
 ### Files:
