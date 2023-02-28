@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 '''
-Description: Main FastQ sequence class.
+Description: Main FastQ sequence class to read, parse, process, and return sequence object.
 Author: Siddharth Sinha (sid3345@gmail.com)
 '''
 
