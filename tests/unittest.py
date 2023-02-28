@@ -1,3 +1,8 @@
+'''
+Description: Unit test script to test all the functions
+Author: Siddharth Sinha (sid3345@gmail.com)
+'''
+
 import sys
 import unittest
 import sequence
