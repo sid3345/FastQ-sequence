@@ -15,12 +15,10 @@ python ./command.py [--count_sequences] [--count_nucleotide] input_filename
 Parameters:
 
  --count_sequences                        : Counts the sequences in input file
-
-                            Default : 0
+     Default : 0
 
  --count_nucleotide                       : Counts the nucleotides in input file
-
-                            Default : 0
+    Default : 0
 
 
 Input file should be a FastQ format file in an unzipped file (txt, etc) or a zipped (.gz) file.
