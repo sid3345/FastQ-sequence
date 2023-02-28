@@ -22,6 +22,7 @@ def create_FastQ_sequence(fname):
     finally:
         f.close()
 
+
 '''Class to save FastQ sequence ID, sequence letters and quality values.'''
 class FastQ_sequence():
 
@@ -36,9 +37,13 @@ class FastQ_sequence():
     def check_sequence(self, f):
 
         line = f.readline()
+        if type(line) is not str:
+            line=line.decode("utf-8")
 
         while line == '\n':
             line = f.readline()
+            if type(line) is not str:
+                line=line.decode("utf-8")
 
         if not line:
             return False
@@ -48,3 +53,31 @@ class FastQ_sequence():
 
         self.sequence_id = line.rstrip()[1:]
         line = f.readline()
+        if type(line) is not str:
+            line=line.decode("utf-8")
+
+        if not line:
+            sys.exit('Error fetching sequence letter, seq ID: ' + self.sequence_id + '\n Exiting')
+
+        self.sequence_letter = line.strip()
+
+        line = f.readline()
+        if type(line) is not str:
+            line=line.decode("utf-8")
+
+        if not (line and line.startswith('+')):
+             sys.exit('Error reading next sequence. seq ID: ' + self.sequence_id + '\n Exiting')
+        
+        line = f.readline()
+        if type(line) is not str:
+            line=line.decode("utf-8")
+
+        if not line:
+            sys.exit('Error fetching quality values. seq ID: ' + self.sequence_id + '\n Exiting')
+
+        self.quality = line.rstrip()
+
+        if len(self.quality) != len(self.sequence_letter):
+            sys.exit('Length of sequence letter and quality values not equal. seq ID: ' + self.sequence_id + '\n Exiting')
+    
+        return True
