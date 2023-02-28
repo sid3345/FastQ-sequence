@@ -21,4 +21,12 @@ def read_file(input_file):
 
         except:
             sys.exit("Error reading gzipped file: " + input_file)
+
+    else:
+        try:
+            io_handler = open(input_file)
+        except:
+            sys.exit("Error reading file: " + input_file)
+
     return io_handler
+    
