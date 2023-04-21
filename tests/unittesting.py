@@ -46,7 +46,7 @@ class TestCheckFastQSequence(unittest.TestCase):
         while seq_obj.check_sequence(inp_file):
             self.assertEqual(seq_obj, sequence.FastQSequence(SEQUENCE_ID, SEQUENCE_LETTER, QUALITY_VALUES))
         inp_file.close()
-  
+
     def test_unequal_length(self):
         '''Description: check_sequence should raise an error if seq and quality length are unequal.'''
         with self.assertRaises(sequence.Error):
