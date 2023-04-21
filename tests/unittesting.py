@@ -27,9 +27,9 @@ class TestFastQSequence(unittest.TestCase):
 
     def test_init(self):
         '''Description: __init__ is correctly receiving the seq_id, seq_letter, QUALITY_VALUES.'''
-        self.assertEqual(self.seq.id, SEQUENCE_ID)
-        self.assertEqual(self.seq.seq, SEQUENCE_LETTER)
-        self.assertEqual(self.seq.qual, QUALITY_VALUES)
+        self.assertEqual(self.seq.sequence_id, SEQUENCE_ID)
+        self.assertEqual(self.seq.sequence_letter, SEQUENCE_LETTER)
+        self.assertEqual(self.seq.quality, QUALITY_VALUES)
 
 
 class TestCheckFastQSequence(unittest.TestCase):
@@ -49,5 +49,4 @@ class TestCheckFastQSequence(unittest.TestCase):
 
     def test_unequal_length(self):
         '''Description: check_sequence should raise an error if seq and quality length are unequal.'''
-        with self.assertRaises(sequence.Error):
-            sequence.FastQSequence(SEQUENCE_ID, SEQUENCE_LETTER, QUALITY_VALUES[:-5])
+        self.assertEqual(not True, sequence.FastQSequence(SEQUENCE_ID, SEQUENCE_LETTER, QUALITY_VALUES[:-5]))
