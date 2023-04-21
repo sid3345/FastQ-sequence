@@ -32,18 +32,18 @@ class FastQSequence():
         self.quality = quality
 
 
-    def check_sequence(self, f):
+    def check_sequence(self, file):
         '''
         # Description: Fetches next line from the file and Modifies sequence object
         # Input: sequence details
         # Output: True / False, Modifies sequence object
         '''
-        line = f.readline()
+        line = file.readline()
         if not isinstance(line, str):
             line=line.decode("utf-8")
 
         while line == '\n':
-            line = f.readline()
+            line = file.readline()
             if not isinstance(line, str):
                 line=line.decode("utf-8")
 
@@ -52,7 +52,7 @@ class FastQSequence():
         if not line.startswith('@'):
             sys.exit('Error fetching next sequence. Line does not starts with @:\n' + line + '\n Exiting')
         self.sequence_id = line.rstrip()[1:]
-        line = f.readline()
+        line = file.readline()
         if not isinstance(line, str):
             line=line.decode("utf-8")
         if not line:
@@ -60,14 +60,14 @@ class FastQSequence():
 
         self.sequence_letter = line.strip()
 
-        line = f.readline()
+        line = file.readline()
         if not isinstance(line, str):
             line=line.decode("utf-8")
 
         if not (line and line.startswith('+')):
             sys.exit('Error reading next sequence. seq ID: ' + self.sequence_id + '\n Exiting')
-        
-        line = f.readline()
+
+        line = file.readline()
         if not isinstance(line, str):
             line=line.decode("utf-8")
 
