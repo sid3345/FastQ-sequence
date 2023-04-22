@@ -8,7 +8,7 @@ Author: Siddharth Sinha (sid3345@gmail.com)
 import sys
 import gzip
 
-# define Python user-defined exceptions
+# define reading file exception
 class ErrorReadingFile(Exception):
     "Raised when Error reading file"
 
