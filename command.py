@@ -8,6 +8,10 @@ Author: Siddharth Sinha (sid3345@gmail.com)
 import sys
 import action
 
+# define reading command line arguments exception
+class ErrorReadingArguments(Exception):
+    "Raised when Error reading command line arguments"
+
 # input parameters format: {parameter:[default, description]}
 parameters = {'count_sequences': [0, 'Counts the sequences in input file'],
               'count_nucleotide': [0,'Counts the nucleotides in input file']}
@@ -48,12 +52,16 @@ if (sys.argv[1] in ['-h', '--h', '-help', '--help']):
     help_doc_func(parameters)
     print_exit()
 
-arguments = sys.argv
-PARAM=arguments[1][2:]
-INPUT_FILENAME=arguments[2]
+try:
+    arguments = sys.argv
+except ErrorReadingArguments:
+    print_exit('Error reading command line arguments')
 
-if len(sys.argv) == 1 or PARAM not in parameters:
-    print_exit("Incorrect parameters. Type -h or -help for menu")
+if len(arguments) < 3 or arguments[1][2:] not in parameters:
+    print_exit("Incorrect parameters. Type -h or -help for help section")
+else:
+    PARAM=arguments[1][2:]
+    INPUT_FILENAME=arguments[2]
 
 try:
     func = getattr(action, PARAM)(INPUT_FILENAME)
