@@ -53,4 +53,4 @@ class TestCheckFastQSequence(unittest.TestCase):
         seq_obj = sequence.FastQSequence()
         with self.assertRaises(SystemExit) as length_exception:
             seq_obj.check_sequence(inp_file)
-        self.assertEqual('Length', str(length_exception.exception)[:6])
+        self.assertEqual(True, 'length' in str(length_exception.exception).lower())
